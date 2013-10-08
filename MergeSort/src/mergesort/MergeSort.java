@@ -6,7 +6,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] unsortedArray;
         int[] sortedArray;
-        unsortedArray = new int[] {6,7,5,3,54,8,6,4,32,2,4,6,7,8,8,4,32,2};
+        unsortedArray = new int[] {6,7,54,8,6,4,0,342,5,3,32,34,5,32,1,34,46,46,32,13,32,34,35};
         sortedArray = mergeSort(unsortedArray);
                 
         for (int i=0; i<sortedArray.length; i++) {
@@ -28,7 +28,7 @@ public class MergeSort {
             arrayA = mergeSort(arrayA);
             arrayB = mergeSort(arrayB);
         }
-
+        
         int i = 0;
         int j = 0;
         for (int k=0; k<inputLength; k++){
@@ -39,6 +39,7 @@ public class MergeSort {
                 continue;
             } else if (j==arrayB.length){
                 sortedArray[k] = arrayA[i];
+                i++;
                 continue;
             }
             
