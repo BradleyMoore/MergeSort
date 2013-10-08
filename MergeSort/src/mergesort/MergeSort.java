@@ -17,7 +17,6 @@ public class MergeSort {
     public static int[] mergeSort(int[] unsortedArray) {
         // recursive merge sort algorithm
         int inputLength = unsortedArray.length;
-        int loopLimit = inputLength/2;
 
         // split array into 2 arrays that diff by <= 1
         int[] arrayA = Arrays.copyOfRange(unsortedArray, 0, inputLength/2);
@@ -26,17 +25,49 @@ public class MergeSort {
         
         // continue to split arrays until they are both diff by <= 1
         if (arrayA.length > 1 && arrayB.length > 1) {
-            mergeSort(arrayA);
-            mergeSort(arrayB);
+            arrayA = mergeSort(arrayA);
+            arrayB = mergeSort(arrayB);
         }
 
         int i = 0;
         int j = 0;
-        int k = 0;
-        while (i < loopLimit && j < loopLimit) {
+        for (int k=0; k<inputLength; k++){
+            if (i==arrayA.length){
+                sortedArray[k] = arrayB[j];
+                j++;
+            } else if (j==arrayB.length){
+                sortedArray[k] = arrayA[i];
+            }
             if (arrayA[i] < arrayB[j]) {
                 sortedArray[k] = arrayA[i];
                 i++;
             } else {
                 sortedArray[k] = arrayB[j];
                 j++;
+            }
+        }
+        
+        /*while (i < arrayA.length && j < arrayB.length) {
+            if (arrayA[i] < arrayB[j]) {
+                sortedArray[k] = arrayA[i];
+                i++;
+            } else {
+                sortedArray[k] = arrayB[j];
+                j++;
+            }
+            k++;
+        }*/
+
+
+        for (; k < sortedArray.length; k++) {
+            if (i>j) {
+                sortedArray[k] = arrayB[j];
+                j++;
+            } else {
+                sortedArray[k] = arrayA[i];
+                j++;
+            }
+        }
+        return sortedArray;
+    }
+}
