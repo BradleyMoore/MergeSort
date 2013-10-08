@@ -58,16 +58,6 @@ public class MergeSort {
             k++;
         }*/
 
-
-        for (; k < sortedArray.length; k++) {
-            if (i>j) {
-                sortedArray[k] = arrayB[j];
-                j++;
-            } else {
-                sortedArray[k] = arrayA[i];
-                j++;
-            }
-        }
         return sortedArray;
     }
 }
