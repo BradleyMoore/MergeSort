@@ -6,7 +6,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] unsortedArray;
         int[] sortedArray;
-        unsortedArray = new int[] {6,7,54,8,6,4,0,342,5,3,32,34,5,32,1,34,46,46,32,13,32,34,35};
+        unsortedArray = new int[] {6,7,54,8,6,4,0,342,5,3,32,34,5,32,1,34,46,46,32,13,32,34,35,-654};
         sortedArray = mergeSort(unsortedArray);
                 
         for (int i=0; i<sortedArray.length; i++) {
@@ -24,7 +24,7 @@ public class MergeSort {
         int[] sortedArray = new int[inputLength];
         
         // continue to split arrays until they are both diff by <= 1
-        if (arrayA.length > 1 || arrayB.length > 1) {
+        if (arrayA.length > 1 || arrayB.length > 1){
             arrayA = mergeSort(arrayA);
             arrayB = mergeSort(arrayB);
         }
@@ -32,7 +32,7 @@ public class MergeSort {
         int i = 0;
         int j = 0;
         for (int k=0; k<inputLength; k++){
-            // if 1 array is already used just keep adding other array);
+            // if 1 array is already used up just keep adding other array);
             if (i==arrayA.length){
                 sortedArray[k] = arrayB[j];
                 j++;
@@ -43,8 +43,8 @@ public class MergeSort {
                 continue;
             }
             
-            // add the lower array element to the sorted array
-            if (arrayA[i] < arrayB[j]) {
+            // add the lesser array element to the sorted array
+            if (arrayA[i] < arrayB[j]){
                 sortedArray[k] = arrayA[i];
                 i++;
             } else {
