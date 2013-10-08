@@ -32,12 +32,15 @@ public class MergeSort {
         int i = 0;
         int j = 0;
         for (int k=0; k<inputLength; k++){
+            // if 1 array is already used just keep adding other array
             if (i==arrayA.length){
                 sortedArray[k] = arrayB[j];
                 j++;
             } else if (j==arrayB.length){
                 sortedArray[k] = arrayA[i];
             }
+            
+            // add the lower array element to the sorted array
             if (arrayA[i] < arrayB[j]) {
                 sortedArray[k] = arrayA[i];
                 i++;
