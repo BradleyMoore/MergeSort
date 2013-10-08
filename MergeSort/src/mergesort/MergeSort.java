@@ -24,7 +24,7 @@ public class MergeSort {
         int[] sortedArray = new int[inputLength];
         
         // continue to split arrays until they are both diff by <= 1
-        if (arrayA.length > 1 && arrayB.length > 1) {
+        if (arrayA.length > 1 || arrayB.length > 1) {
             arrayA = mergeSort(arrayA);
             arrayB = mergeSort(arrayB);
         }
