@@ -6,7 +6,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] unsortedArray;
         int[] sortedArray;
-        unsortedArray = new int[] {12, 6, 2};
+        unsortedArray = new int[] {6,7,5,3,54,8,6,4,32,2,4,6,7,8,8,4,32,2};
         sortedArray = mergeSort(unsortedArray);
                 
         for (int i=0; i<sortedArray.length; i++) {
