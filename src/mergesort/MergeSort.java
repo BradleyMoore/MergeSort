@@ -31,24 +31,24 @@ public class MergeSort {
         
         int i = 0;
         int j = 0;
-        for (int k=0; k<inputLength; k++){
+        for (int element : sortedArray){
             // if 1 array is already used up just keep adding other array);
             if (i==arrayA.length){
-                sortedArray[k] = arrayB[j];
+                element = arrayB[j];
                 j++;
                 continue;
             } else if (j==arrayB.length){
-                sortedArray[k] = arrayA[i];
+                element = arrayA[i];
                 i++;
                 continue;
             }
             
             // add the lesser array element to the sorted array
             if (arrayA[i] < arrayB[j]){
-                sortedArray[k] = arrayA[i];
+                element = arrayA[i];
                 i++;
             } else {
-                sortedArray[k] = arrayB[j];
+                element = arrayB[j];
                 j++;
             }
         }
