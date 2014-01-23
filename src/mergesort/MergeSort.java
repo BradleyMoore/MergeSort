@@ -18,12 +18,12 @@ public class MergeSort {
         // recursive merge sort algorithm
         int inputLength = unsortedArray.length;
 
-        // split array into 2 arrays that diff by <= 1
+        // split array into 2 arrays that diff by size <= 1
         int[] arrayA = Arrays.copyOfRange(unsortedArray, 0, inputLength/2);
         int[] arrayB = Arrays.copyOfRange(unsortedArray, inputLength/2, inputLength);
         int[] sortedArray = new int[inputLength];
         
-        // continue to split arrays until they are both diff by <= 1
+        // continue to split arrays until they are both size of 1
         if (arrayA.length > 1 || arrayB.length > 1){
             arrayA = mergeSort(arrayA);
             arrayB = mergeSort(arrayB);
